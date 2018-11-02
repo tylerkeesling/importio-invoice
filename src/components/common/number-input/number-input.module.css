@@ -1,0 +1,51 @@
+.numInput {
+  border: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: inherit;
+  width: 100px;
+  text-overflow: ellipsis;
+  transition: all 0.30s ease-in-out;
+  outline: none;
+
+  margin: 3px 1px 3px 0px;
+}
+
+.numInput:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.numInput:focus {
+  cursor: auto;
+  box-shadow: 0 0 3px rgba(81, 203, 238, 1);
+  margin: 3px 1px 3px 0px;
+}
+
+/* Adjust font size */
+
+.adjustCurrency {
+  font-size: 1rem;
+}
+
+.adjustQuantity {
+  font-size: 1rem;
+}
+
+/* Currency */
+
+.currency {
+  width: 110px;
+}
+
+/* Quantity */
+
+.quantity {
+  width: 50px;
+}
+
+/* Brackets */
+.brackets {
+  font-size: 1.5rem;
+  margin: 0 3px 0 3px;
+}

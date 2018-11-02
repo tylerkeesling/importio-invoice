@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import styles from './button.module.css';
 
 const propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   btnType: PropTypes.string.isRequired,
@@ -18,8 +18,8 @@ const defaultProps = {
 // create constant for button types
 // usage would be <Button.Add {...props} />
 const TYPES = {
-  ADD: 'add',
-  DELETE: 'delete',
+  ADD: 'btn-add',
+  DELETE: 'btn-delete',
 };
 
 const BaseButton = ({ text, onClick, disabled, btnType }) => {
