@@ -21,7 +21,7 @@ const TotalComponent = ({ data }) => {
   const total = calcTotal(subtotal, tax);
   return (
     <div className={styles.container}>
-      <table>
+      <table className={styles['total-table']}>
         <tbody>
           <TotalItem text="Subtotal" value={subtotal} />
           <TotalItem text="Tax (5%)" value={tax} />

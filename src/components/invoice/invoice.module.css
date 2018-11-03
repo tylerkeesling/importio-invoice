@@ -1,0 +1,12 @@
+.invoice-table {
+  border-collapse: collapse;
+}
+
+.invoice-table thead {
+  margin: 5px;
+  border-bottom: 1px solid rgba(0,0,0,0.10);
+}
+
+th:first-child {
+  text-align: left;
+}
