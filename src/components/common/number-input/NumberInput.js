@@ -7,7 +7,7 @@ import styles from './number-input.module.css';
 
 const propTypes = {
   id: PropTypes.string,
-  name: PropTypes.string, // name of field to change (like evt.target.name)
+  field: PropTypes.string, // name of field to change (like evt.target.name)
   value: PropTypes.string.isRequired, // value of input
   isCurrency: PropTypes.bool.isRequired,
   displayType: PropTypes.string, // text or input
@@ -16,6 +16,7 @@ const propTypes = {
 
 const defaultProps = {
   displayType: 'input',
+  handleChange: () => {},
 };
 
 const BaseNumInput = ({
@@ -45,6 +46,9 @@ const BaseNumInput = ({
     [styles.adjustCurrency]: value.length > 8 && isCurrency, // hacky way to adjust font size for overflow
     [styles.adjustQuantity]: value.length > 4 && !isCurrency,
   });
+
+  console.log(id, value.length);
+  console.log(value);
 
   return (
     <div>

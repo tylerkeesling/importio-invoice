@@ -34,9 +34,9 @@ function generateNewItem() {
 
 function updateItem(state, itemData) {
   const { id, field, value } = itemData;
-  console.log('state', state);
+  const { data } = state;
 
-  const newState = state.map(item => {
+  const newState = data.map(item => {
     if (item.id === id) {
       return { ...item, [field]: value };
     }
@@ -46,4 +46,8 @@ function updateItem(state, itemData) {
   return newState;
 }
 
-export { createReducer, updateObject, generateNewItem, updateItem };
+function deleteItem(state, id) {
+  return state.data.filter(item => id !== item.id);
+}
+
+export { createReducer, updateObject, generateNewItem, updateItem, deleteItem };

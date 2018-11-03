@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LineItem from './line-item';
 import * as Button from '../common/button/Button';
-import * as NumberInput from '../common/number-input/NumberInput';
-import Input from '../common/text-input';
+import TotalContainer from '../total/TotalContainer';
+
+import styles from './invoice.module.css';
 
 const propTypes = {
-  invoiceItems: PropTypes.arrayOf(
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
@@ -19,36 +21,35 @@ const propTypes = {
 };
 
 const InvoiceComponent = ({
-  invoiceItems,
+  data,
   addInvoiceItem,
   updateInvoiceItem,
   deleteInvoiceItem,
 }) => {
-  // some text
-  const someVar = 'This is Invoice';
+  const headers = ['Item', 'Qty', 'Price', 'Total'];
   return (
-    <div>
-      <h1>{someVar}</h1>
-      <Button.Add text="New Item" onClick={() => addInvoiceItem()} />
-      <Button.Delete onClick={id => deleteInvoiceItem(id)} />
-      <Input
-        id="1"
-        field="name"
-        value="Widget"
-        handleChange={item => updateInvoiceItem(item)}
-      />
-      <NumberInput.Quantity
-        id="1"
-        field="quantity"
-        value="10000"
-        handleChange={item => updateInvoiceItem(item)}
-      />
-      <NumberInput.Currency
-        id="1"
-        field="price"
-        value="11129.01"
-        handleChange={item => updateInvoiceItem(item)}
-      />
+    <div className={styles.container}>
+      <table>
+        <thead>
+          <tr>
+            {headers.map(header => (
+              <th key={header}>{header}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {data.map(item => (
+            <LineItem
+              {...item}
+              key={item.id}
+              handleUpdateItem={updateInvoiceItem}
+              handleDeleteItem={deleteInvoiceItem}
+            />
+          ))}
+        </tbody>
+      </table>
+      <Button.Add text="Add New Item" onClick={() => addInvoiceItem()} />
+      <TotalContainer />
     </div>
   );
 };

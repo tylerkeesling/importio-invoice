@@ -27,7 +27,7 @@ const BaseButton = ({ text, onClick, disabled, btnType }) => {
 
   return (
     <button
-      type="button" // can't be a prop
+      type="button" // cant be a prop
       disabled={disabled}
       onClick={onClick}
       className={btnClass}
