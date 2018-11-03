@@ -43,13 +43,6 @@ const BaseNumInput = ({
     optional.thousandSeparator = true; // have a delimiter in the thousands place
   }
 
-  // console.log(value, value.length);
-  console.log(value, value.length);
-
-  console.log(field, value.length > 8);
-  console.log(field, isCurrency);
-  console.log(field, field === 'total');
-
   // classNames based on type of input
   const classNames = classnames({
     [styles.numInput]: true,
@@ -69,7 +62,7 @@ const BaseNumInput = ({
         {...optional}
         value={value}
         isNumericString
-        maxlength={maxLength}
+        maxLength={maxLength}
         className={classNames}
         displayType={displayType}
         decimalScale={decimalScale}

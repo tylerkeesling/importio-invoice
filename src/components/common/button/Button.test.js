@@ -35,8 +35,6 @@ describe('<Button />', () => {
 
   it('should have the correct label/text', () => {
     const { wrapper } = setup();
-    console.log(wrapper.debug());
-
     expect(wrapper.find('BaseButton').text()).toEqual('This is my label');
   });
 });
