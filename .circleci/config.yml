@@ -36,11 +36,19 @@ jobs:
       # run tests!
       - run: npm run test
 
+  deploy:
+    run:
+      name: Deploy to Surge
+      command: surge --project ./build --domain importio-invoice.surge.sh
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
       - deploy:
-          production:
-            branch: master
-            commands:
-              - surge --project ./build --domain importio-invoice.surge.sh
-
-
-
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
