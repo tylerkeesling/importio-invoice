@@ -41,6 +41,7 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - checkout
+      - run: npm install
       - run:
           name: Deploy to Surge
           command: npm run deploy
