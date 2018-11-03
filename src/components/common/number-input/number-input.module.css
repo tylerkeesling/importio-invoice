@@ -1,14 +1,13 @@
 .numInput {
+  width: 100px;
   border: none;
+  outline: none;
+  font-size: inherit;
   text-align: center;
   font-family: inherit;
-  font-size: inherit;
-  width: 100px;
+  margin: 3px 1px 3px 0px;
   text-overflow: ellipsis;
   transition: all 0.30s ease-in-out;
-  outline: none;
-
-  margin: 3px 1px 3px 0px;
 }
 
 .numInput:hover {
@@ -18,8 +17,8 @@
 
 .numInput:focus {
   cursor: auto;
-  box-shadow: 0 0 3px rgba(81, 203, 238, 1);
   margin: 3px 1px 3px 0px;
+  box-shadow: 0 0 3px rgba(81, 203, 238, 1);
 }
 
 /* Adjust font size */

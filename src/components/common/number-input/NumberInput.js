@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import NumberFormat from 'react-number-format';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -20,7 +20,7 @@ const defaultProps = {
 
 const BaseNumInput = ({
   id,
-  name,
+  field,
   value,
   isCurrency,
   displayType,
@@ -38,7 +38,7 @@ const BaseNumInput = ({
   }
 
   // classNames based on type of input
-  const inputClass = classnames({
+  const classNames = classnames({
     [styles.numInput]: true,
     [styles.currency]: isCurrency,
     [styles.quantity]: !isCurrency,
@@ -47,19 +47,21 @@ const BaseNumInput = ({
   });
 
   return (
-    <>
+    <div>
       <span className={styles.brackets}>[</span>
       <NumberFormat
         {...optional}
         value={value}
         isNumericString
-        className={inputClass}
+        className={classNames}
         displayType={displayType}
         decimalScale={decimalScale}
-        onValueChange={values => handleChange(id, name, values.value)} // values is obj and want just the `value`
+        onValueChange={
+          values => handleChange({ id, field, value: values.value }) // values is obj and want just the `value`
+        }
       />
       <span className={styles.brackets}>]</span>
-    </>
+    </div>
   );
 };
 

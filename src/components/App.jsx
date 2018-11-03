@@ -1,28 +1,29 @@
 import React from 'react';
 import * as Button from './common/button/Button';
 import * as NumberInput from './common/number-input/NumberInput';
+import InvoiceContainer from './invoice';
 
 import './app.css';
 
 const App = () => (
   <div className="container">
-    <div>This is invoice component</div>
     <div>This is total component</div>
-    <Button.Add text="New Item" onClick={() => {}} />
-    <Button.Delete onClick={() => {}} />
+
     <NumberInput.Quantity
       id="1"
-      name="name"
+      name="quantity"
       value="10000"
-      handleChange={() => {}}
+      handleChange={() => { }}
     />
     <NumberInput.Currency
       id="1"
-      name="name"
+      name="price"
       value="11129.01"
-      handleChange={() => {}}
+      handleChange={() => { }}
     />
     <NumberInput.Currency value={(10 * 20.05).toString()} />
+
+    <InvoiceContainer />
   </div>
 );
 

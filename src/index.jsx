@@ -6,26 +6,28 @@ import rootReducer from './store/reducers';
 import App from './components/App';
 
 const initialState = {
-  invoiceItems: [
-    {
-      id: '1',
-      name: 'Widget',
-      quantity: '2',
-      price: '10.00',
-    },
-    {
-      id: '2',
-      name: 'Cog',
-      quantity: '2',
-      price: '15.99',
-    },
-    {
-      id: '3',
-      name: 'Wheel',
-      quantity: '0',
-      price: '23.499',
-    },
-  ],
+  invoiceItems: {
+    data: [
+      {
+        id: '1',
+        name: 'Widget',
+        quantity: '2',
+        price: '10.00',
+      },
+      {
+        id: '2',
+        name: 'Cog',
+        quantity: '2',
+        price: '15.99',
+      },
+      {
+        id: '3',
+        name: 'Wheel',
+        quantity: '0',
+        price: '23.499',
+      },
+    ],
+  },
 };
 
 const store = createStore(

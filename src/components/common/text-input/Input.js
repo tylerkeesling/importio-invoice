@@ -1,3 +1,7 @@
+/* Wrapper component for standard HTML input
+ *
+*/
+
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
@@ -6,47 +10,41 @@ import styles from './input.module.css';
 
 const propTypes = {
   id: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired, // name of field to change (like evt.target.name)
-  value: PropTypes.string.isRequired, // value of input
+  type: PropTypes.string,
+  value: PropTypes.string.isRequired,
+  field: PropTypes.string.isRequired,
   handleChange: PropTypes.func.isRequired,
 };
 
 const defaultProps = {
-  displayType: 'input',
+  type: 'text',
 };
 
-const Input = ({ id, name, value, isCurrency, displayType, handleChange }) => {
-  let decimalScale = 0; // set initial allowance for decimals to 0
-  const optional = {}; // initialize optional object for props
-
-  if (isCurrency) {
-    // optional library props
-    decimalScale = 2; // max amount of decimals
-    optional.fixedDecimalScale = true; // force the decimalScale, so in this case always have 2
-    optional.thousandSeparator = true; // have a delimiter in the thousands place
-    optional.prefix = '$ '; // prefix input with given string
-  }
-
-  // classNames based on type of input
-  const inputClass = classnames({
-    [styles.numInput]: true,
-    [styles.currency]: isCurrency,
-    [styles.quantity]: !isCurrency,
-    [styles.adjustCurrency]: value.length > 8 && isCurrency, // hacky way to adjust font size for overflow
-    [styles.adjustQuantity]: value.length > 4 && !isCurrency,
+const Input = ({ id, value, field, type, handleChange }) => {
+  const classNames = classnames({
+    [styles.input]: true,
+    [styles.adjustFontSize]: value.length > 14, // hacky way to adjust font size for overflow
   });
 
   return (
-    <>
-      <input
-        {...optional}
-        value={value}
-        className={inputClass}
-        onChange={evt => handleChange(evt)}
-      />
-    </>
+    <input
+      id={id}
+      type={type}
+      name={field}
+      value={value}
+      className={classNames}
+      onChange={evt =>
+        handleChange({
+          id: evt.target.id,
+          field: evt.target.name,
+          value: evt.target.value,
+        })
+      }
+    />
   );
 };
 
 Input.propTypes = propTypes;
 Input.defaultProps = defaultProps;
+
+export default Input;

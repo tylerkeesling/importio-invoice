@@ -4,23 +4,22 @@ import {
   DELETE_INVOICE_ITEM,
 } from '../action-types/invoice-action-types';
 
-export function addInvoiceItem(payload) {
+export function addInvoiceItem() {
   return {
     type: ADD_INVOICE_ITEM,
-    payload,
   };
 }
 
-export function UpdateInvoiceItem(payload) {
+export function updateInvoiceItem(payload) {
   return {
     type: UPDATE_INVOICE_ITEM,
     payload,
   };
 }
 
-export function deleteInvoiceItem(payload) {
+export function deleteInvoiceItem(id) {
   return {
     type: DELETE_INVOICE_ITEM,
-    payload,
+    id,
   };
 }
