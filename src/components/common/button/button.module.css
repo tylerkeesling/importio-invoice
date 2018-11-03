@@ -23,6 +23,7 @@
   display: flex;
   padding-left: 0px;
   font-size: inherit;
+  background: none;
 }
 
 /* Delete Button */

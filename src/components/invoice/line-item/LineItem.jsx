@@ -37,6 +37,7 @@ const LineItem = props => {
       <td className="item-quantity">
         <NumberInput.Quantity
           id={id}
+          maxLength={3}
           field="quantity"
           value={quantity}
           handleChange={item => handleUpdateItem(item)}
@@ -53,6 +54,7 @@ const LineItem = props => {
       <td className={styles.total}>
         <NumberInput.Currency
           id={id}
+          field="total"
           displayType="text"
           value={(price * quantity).toFixed(2).toString()}
         />

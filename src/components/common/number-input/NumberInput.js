@@ -9,6 +9,7 @@ const propTypes = {
   id: PropTypes.string, // unique id of the object
   field: PropTypes.string, // name of field to change (like evt.target.name)
   value: PropTypes.string.isRequired, // value of input
+  maxLength: PropTypes.number,
   isCurrency: PropTypes.bool.isRequired, // if true, apply currency mask
   hasBrackets: PropTypes.bool, // display brackets around text
   displayType: PropTypes.string, // text or input
@@ -25,6 +26,7 @@ const BaseNumInput = ({
   id,
   field,
   value,
+  maxLength,
   isCurrency,
   hasBrackets,
   displayType,
@@ -41,14 +43,23 @@ const BaseNumInput = ({
     optional.thousandSeparator = true; // have a delimiter in the thousands place
   }
 
+  // console.log(value, value.length);
+  console.log(value, value.length);
+
+  console.log(field, value.length > 8);
+  console.log(field, isCurrency);
+  console.log(field, field === 'total');
+
   // classNames based on type of input
   const classNames = classnames({
     [styles.numInput]: true,
     [styles.currency]: isCurrency, // apply css for currency
     [styles.quantity]: !isCurrency, // apply css for just numbers
     [styles.editable]: displayType !== 'text', // remove editable looking css for number text boxes
-    [styles.adjustCurrency]: value.length > 8 && isCurrency, // hacky way to adjust font size for overflow
-    [styles.adjustQuantity]: value.length > 4 && !isCurrency,
+    [styles.adjustCurrency]:
+      value.length > 8 &&
+      isCurrency &&
+      (field === 'total' || field === 'price'), // hacky way to adjust font size for overflow
   });
 
   return (
@@ -58,6 +69,7 @@ const BaseNumInput = ({
         {...optional}
         value={value}
         isNumericString
+        maxlength={maxLength}
         className={classNames}
         displayType={displayType}
         decimalScale={decimalScale}

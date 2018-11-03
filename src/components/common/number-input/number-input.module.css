@@ -23,11 +23,8 @@
 /* Adjust font size */
 
 .adjustCurrency {
-  font-size: 1rem;
-}
-
-.adjustQuantity {
-  font-size: 1rem;
+  font-size: 0.7rem;
+  line-height: 17px;
 }
 
 /* Currency */
