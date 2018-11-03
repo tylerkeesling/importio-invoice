@@ -1,6 +1,5 @@
 import React from 'react';
 import InvoiceContainer from './invoice';
-import TotalContainer from './total';
 
 import './app.css';
 

@@ -47,9 +47,6 @@ const BaseNumInput = ({
     [styles.adjustQuantity]: value.length > 4 && !isCurrency,
   });
 
-  console.log(id, value.length);
-  console.log(value);
-
   return (
     <div>
       <span className={styles.brackets}>[</span>

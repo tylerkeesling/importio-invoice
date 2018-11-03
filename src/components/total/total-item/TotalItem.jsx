@@ -17,7 +17,7 @@ const TotalItem = props => {
     <tr>
       <td className="total-name">{text}</td>
       <td className="total-money">
-        <NumberInput.Currency value={value} />
+        <NumberInput.Currency displayType="text" value={value} />
       </td>
     </tr>
   );
