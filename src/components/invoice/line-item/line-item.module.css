@@ -1,0 +1,5 @@
+.total {
+  min-width: 110px;
+  display: flex;
+  align-items: flex-end;
+}

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import LineItem from './line-item';
 import * as Button from '../common/button/Button';
-import TotalContainer from '../total/TotalContainer';
 
 import styles from './invoice.module.css';
 
@@ -29,7 +28,7 @@ const InvoiceComponent = ({
   const headers = ['Item', 'Qty', 'Price', 'Total'];
   return (
     <div className={styles.container}>
-      <table>
+      <table className={styles['invoice-table']}>
         <thead>
           <tr>
             {headers.map(header => (
@@ -49,7 +48,6 @@ const InvoiceComponent = ({
         </tbody>
       </table>
       <Button.Add text="Add New Item" onClick={() => addInvoiceItem()} />
-      <TotalContainer />
     </div>
   );
 };

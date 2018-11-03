@@ -4,6 +4,8 @@ import Input from '../../common/text-input';
 import * as NumberInput from '../../common/number-input/NumberInput';
 import * as Button from '../../common/button/Button';
 
+import styles from './line-item.module.css';
+
 const propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -48,10 +50,10 @@ const LineItem = props => {
           handleChange={item => handleUpdateItem(item)}
         />
       </td>
-      <td className="item-total">
+      <td className={styles.total}>
         <NumberInput.Currency
           id={id}
-          // field="total"
+          displayType="text"
           value={(price * quantity).toFixed(2).toString()}
         />
       </td>

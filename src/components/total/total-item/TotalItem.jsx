@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as NumberInput from '../../common/number-input/NumberInput';
 
+import styles from './total-item.module.css';
+
 const propTypes = {
   text: PropTypes.string.isRequired,
   value: PropTypes.string,
@@ -15,9 +17,13 @@ const TotalItem = props => {
   const { text, value } = props;
   return (
     <tr>
-      <td className="total-name">{text}</td>
-      <td className="total-money">
-        <NumberInput.Currency value={value} />
+      <td className={styles['total-text']}>{text}</td>
+      <td className={styles['total-currency']}>
+        <NumberInput.Currency
+          hasBrackets={false}
+          displayType="text"
+          value={value}
+        />
       </td>
     </tr>
   );

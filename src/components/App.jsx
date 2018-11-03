@@ -2,12 +2,14 @@ import React from 'react';
 import InvoiceContainer from './invoice';
 import TotalContainer from './total';
 
-import './app.css';
+import styles from './app.module.css';
 
 const App = () => (
-  <div className="container">
-    <div>This is total component</div>
-    <InvoiceContainer />
+  <div className={styles.container}>
+    <div className={styles['invoice-table']}>
+      <InvoiceContainer />
+      <TotalContainer />
+    </div>
   </div>
 );
 

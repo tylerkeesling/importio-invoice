@@ -1,5 +1,4 @@
 .numInput {
-  width: 100px;
   border: none;
   outline: none;
   font-size: inherit;
@@ -10,12 +9,12 @@
   transition: all 0.30s ease-in-out;
 }
 
-.numInput:hover {
+.editable:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.numInput:focus {
+.editable:focus {
   cursor: auto;
   margin: 3px 1px 3px 0px;
   box-shadow: 0 0 3px rgba(81, 203, 238, 1);
@@ -34,13 +33,13 @@
 /* Currency */
 
 .currency {
-  width: 110px;
+  width: 90px;
 }
 
 /* Quantity */
 
 .quantity {
-  width: 50px;
+  width: 30px;
 }
 
 /* Brackets */
