@@ -30,6 +30,7 @@ const initialState = {
   },
 };
 
+// redux dev tools here in case someone wanted to look; wouldnt have in prod
 const store = createStore(
   rootReducer,
   initialState,

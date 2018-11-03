@@ -32,7 +32,9 @@ const InvoiceComponent = ({
         <thead>
           <tr>
             {headers.map(header => (
-              <th key={header}>{header}</th>
+              <th className={styles[`${header}`]} key={header}>
+                {header}
+              </th>
             ))}
           </tr>
         </thead>
@@ -45,9 +47,20 @@ const InvoiceComponent = ({
               handleDeleteItem={deleteInvoiceItem}
             />
           ))}
+          <tr>
+            <td>
+              <Button.Add
+                text="[ New Item ]"
+                onClick={() => addInvoiceItem()}
+              />
+            </td>
+            <td />
+            <td />
+            <td />
+            <td />
+          </tr>
         </tbody>
       </table>
-      <Button.Add text="Add New Item" onClick={() => addInvoiceItem()} />
     </div>
   );
 };

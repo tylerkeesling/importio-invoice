@@ -1,5 +1,6 @@
 .invoice-table {
   border-collapse: collapse;
+  min-width: 478px;
 }
 
 .invoice-table thead {
@@ -9,4 +10,20 @@
 
 th:first-child {
   text-align: left;
+}
+
+/* would need to refactor this
+   -accounting for empty table
+*/
+
+.Item {
+  width: 155px;
+}
+
+.Qty {
+  width: 60px;
+}
+
+.Price, .Total {
+  width: 120px;
 }

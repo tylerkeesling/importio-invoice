@@ -1,6 +1,7 @@
-// boilerplate function used in this pattern
+// reduce boilerplate function
 function createReducer(initialState, handlers) {
   return (state = initialState, action) => {
+    // this is bc of the linter; can't access prototype directly
     const hasActionProp = Object.prototype.hasOwnProperty.call(
       handlers,
       action.type
@@ -12,7 +13,7 @@ function createReducer(initialState, handlers) {
   };
 }
 
-// Boilerplate code that is used for creating a copy of state
+// reduce boilerplate function that is used for creating a copy of state
 function updateObject(oldObject, newObject) {
   return Object.assign({}, oldObject, newObject);
 }
@@ -26,7 +27,7 @@ function generateNewItem() {
 
   return {
     id,
-    name: 'New Item',
+    name: '< New Item >',
     price: '0.00',
     quantity: '0',
   };
