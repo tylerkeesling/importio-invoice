@@ -41,8 +41,8 @@ jobs:
       - image: circleci/node:7.10
     steps:
       - run:
-        name: Deploy to Surge
-        command: surge --project ./build --domain importio-invoice.surge.sh
+          name: Deploy to Surge
+          command: surge --project ./build --domain importio-invoice.surge.sh
 
 workflows:
   version: 2
