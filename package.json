@@ -21,7 +21,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "rm -rf build && npm run build && cd build && mv index.html 200.html && surge . --domain importio-invoice.surge.sh"
+    "aws": "npm run build && aws s3 sync build/ s3://tylerkeesling.xyz",
+    "deploy": "rm -rf build && npm run build && cd build && surge . --domain importio-invoice.surge.sh"
   },
   "eslintConfig": {
     "extends": "react-app"
