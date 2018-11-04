@@ -36,6 +36,7 @@ const InvoiceComponent = ({
                 {header}
               </th>
             ))}
+            <th />
           </tr>
         </thead>
         <tbody>
