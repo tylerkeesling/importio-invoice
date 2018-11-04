@@ -50,7 +50,7 @@ const BaseNumInput = ({
     [styles.quantity]: !isCurrency, // apply css for just numbers
     [styles.editable]: displayType !== 'text', // remove editable looking css for number text boxes
     [styles.adjustCurrency]:
-      value.length > 8 &&
+      value.length >= 8 &&
       isCurrency &&
       (field === 'total' || field === 'price'), // hacky way to adjust font size for overflow
   });
