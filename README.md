@@ -4,7 +4,8 @@ The requirements were to utilize React, Redux, Webpack, and ES6/ES7 JS to build 
 
 Authored by Tyler Keesling.
 
-[deployed site](http://tylerkeesling.xyz)
+[deployed site](http://tylerkeesling.xyz)\
+To run locally, use `npm start`.
 
 ### Technologies/libraries used
 - React
